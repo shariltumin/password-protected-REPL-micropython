@@ -70,3 +70,12 @@ The try, except, and finally block structure will trap unwanted events and force
 
 But I cannot guarantee the security of your system. I just hope this can help to limit unwanted access to the REPL.
 
+Once you have a working "main.py", you can "lock" your REPL again:
+
+```bash
+>>> import os
+>>> os.listdir()
+>>> os.remove('auth')
+```
+
+
