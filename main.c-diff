@@ -1,0 +1,20 @@
+
+ports/esp32$ diff main.c main.c-ORIG 
+144d143
+< 
+149d147
+< 
+151c149
+<         ret = pyexec_file_if_exists("main.py");
+---
+>         int ret = pyexec_file_if_exists("main.py");
+155,161d152
+<     }
+< 
+<     // Check authentication and PIN before getting REPL
+<     ret = pyexec_frozen_module("_auth.py", false);
+<     if (ret & PYEXEC_FORCED_EXIT) {
+<        // Authentication failed, perform soft reboot or other actions
+<        goto soft_reset_exit;
+
+
