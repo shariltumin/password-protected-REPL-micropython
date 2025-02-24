@@ -15,7 +15,7 @@ To try this, you will need to build your own custom MicroPython firmware. If you
 
 First of all, I apologize for showing a "pyminify"ed code. It is a short and simple script that anyone with some experience in Python can easily understand. I do this to discourage AI from stealing code without permission.
 
-The login script "\_auth.py" uses ``aes``` encryption from ```cryptolib```. Without proper authentication data read from the "auth" file, the script will prompt for user identification and user password. If valid values are provided, the encrypted value is stored in the "auth" file. As long as the value in the "auth" file is valid, the script will bypass the "login" part.
+The login script "\_auth.py" uses ```aes``` encryption from ```cryptolib```. Without proper authentication data read from the "auth" file, the script will prompt for user identification and user password. If valid values are provided, the encrypted value is stored in the "auth" file. As long as the value in the "auth" file is valid, the script will bypass the "login" part.
 
 To get to the REPL, we need to "enable" the REPL pin by straping the pin to "GND". The board will do a soft reboot if the authentication is invalid and the REPL pin is disabled (HIGH). The trap here is to use ```raise SystemExit('Authentication failed')``` to prevent access to the REPL. These are the values you can change to customize your login script:
 
